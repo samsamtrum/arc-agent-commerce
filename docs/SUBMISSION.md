@@ -14,7 +14,7 @@ Best Agentic Economy Experience on Arc
 
 ## Circle Developer Account Email
 
-TODO: add Khánh's Circle Developer Account email.
+ptruongvan31@gmail.com
 
 ## Circle products used on Arc
 
