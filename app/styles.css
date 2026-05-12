@@ -1,0 +1,31 @@
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --card: rgba(255,255,255,0.08);
+  --line: rgba(255,255,255,0.15);
+  --text: #f7fbff;
+  --muted: #aab7ca;
+  --accent: #44d7b6;
+  --accent2: #7aa7ff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top left, #15375a, var(--bg) 45%); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: inherit; }
+.page { min-height: 100vh; padding: 40px; max-width: 1180px; margin: 0 auto; }
+.hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: stretch; }
+.card { border: 1px solid var(--line); background: var(--card); border-radius: 24px; padding: 24px; box-shadow: 0 20px 80px rgba(0,0,0,0.28); backdrop-filter: blur(14px); }
+.badge { display: inline-flex; gap: 8px; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; color: var(--accent); background: rgba(68,215,182,0.1); font-weight: 700; }
+h1 { font-size: clamp(40px, 7vw, 80px); line-height: .9; margin: 22px 0; letter-spacing: -0.06em; }
+h2 { margin: 0 0 16px; font-size: 24px; }
+p, li { color: var(--muted); line-height: 1.7; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.metric strong { display:block; color: var(--text); font-size: 28px; }
+.flow { display: grid; gap: 12px; }
+.step { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid var(--line); border-radius: 18px; background: rgba(0,0,0,.15); }
+.num { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #06101d; display: grid; place-items: center; font-weight: 900; flex: 0 0 auto; }
+.demo { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+input, textarea { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: rgba(0,0,0,.25); color: var(--text); padding: 14px; font: inherit; }
+button { border: 0; border-radius: 16px; padding: 14px 18px; font-weight: 800; background: linear-gradient(135deg,var(--accent),var(--accent2)); color: #06101d; cursor: pointer; }
+pre { white-space: pre-wrap; word-break: break-word; color: #dce9ff; background: rgba(0,0,0,.25); border-radius: 16px; padding: 16px; border: 1px solid var(--line); min-height: 220px; }
+.footer { margin-top: 24px; color: var(--muted); font-size: 14px; }
+@media (max-width: 850px) { .page { padding: 20px; } .hero, .demo, .grid { grid-template-columns: 1fr; } }

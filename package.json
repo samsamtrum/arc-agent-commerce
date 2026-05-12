@@ -1,0 +1,31 @@
+{
+  "name": "arc-agent-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI commerce agent demo for the Stablecoins Commerce Stack Challenge on Arc/Circle.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test:demo": "tsx scripts/demo-flow.ts",
+    "demo:capture": "next dev > /tmp/arc-agent-commerce-next.log 2>&1 & echo $! > /tmp/arc-agent-commerce-next.pid && sleep 8 && node scripts/capture-demo.mjs; kill $(cat /tmp/arc-agent-commerce-next.pid) || true",
+    "demo:capture:running": "node scripts/capture-demo.mjs"
+  },
+  "dependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "ethers": "^6.13.5",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "latest",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "playwright": "^1.49.1"
+  }
+}
