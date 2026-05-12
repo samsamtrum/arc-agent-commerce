@@ -49,7 +49,7 @@ The MVP includes:
 
 ## GitHub repo
 
-TODO: add repo URL after publishing.
+https://github.com/samsamtrum/arc-agent-commerce
 
 ## Demo app URL
 
