@@ -2,11 +2,11 @@
 
 ## Title
 
-Arc Agent Commerce: Bounded USDC Payments for Autonomous AI Agents
+Arc Agent Commerce: Bounded USDC Payments for Autonomous Agents
 
 ## Short description
 
-A functional MVP where an AI commerce agent researches suppliers, asks the user to approve a fixed USDC spending limit, settles or simulates payment on Arc, and returns an auditable receipt. The project demonstrates how Circle USDC, Arc, Wallets, Gateway, and nanopayments can power safe agentic commerce.
+Arc Agent Commerce is a functional MVP for agentic commerce on Arc. A user gives an agent a task and budget, the app selects a supplier, the user approves a fixed USDC payment, and the backend returns an auditable receipt. The demo focuses on safe agent spending patterns using USDC, Arc, Circle Wallets, Gateway, and nanopayments.
 
 ## Track
 
@@ -30,22 +30,23 @@ The MVP includes:
 
 - frontend dashboard,
 - backend API routes,
-- agent quote generation,
+- supplier recommendation logic,
 - bounded user authorization,
 - simulated/testnet-ready settlement,
 - receipt output,
 - Solidity spend guard contract sketch,
-- architecture documentation.
+- architecture documentation,
+- Circle Product Feedback section.
 
 ## Demo video outline
 
-1. Show the problem: agents can research and choose tools, but need safe payments.
-2. Open Arc Agent Commerce dashboard.
-3. Enter request: “Find the cheapest inference API to summarize a supplier contract, pay only if under 3 USDC.”
-4. Agent returns supplier recommendation and reasoning.
-5. User approves bounded payment.
-6. App returns Arc testnet/simulated USDC receipt.
-7. Explain how Circle Wallets/Gateway/Nanopayments complete the production version.
+1. Open the live demo.
+2. Enter a task and USDC budget.
+3. Click **Ask agent for quote**.
+4. Show the supplier recommendation and reasoning.
+5. Click **Approve & settle**.
+6. Show the receipt with chain, amount, txHash, and status.
+7. Briefly show the GitHub repo or README.
 
 ## GitHub repo
 
@@ -62,3 +63,7 @@ See `docs/ARCHITECTURE.md`.
 ## Circle Product Feedback
 
 See `docs/CIRCLE_PRODUCT_FEEDBACK.md`.
+
+## Limitations and next steps
+
+See `docs/LIMITATIONS.md` and `docs/ROADMAP.md`.

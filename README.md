@@ -1,60 +1,72 @@
 # Arc Agent Commerce
 
-AI commerce agent demo for **The Stablecoins Commerce Stack Challenge** on Ignyte.
+A hackathon MVP for **The Stablecoins Commerce Stack Challenge** on Ignyte.
 
-## Track
+**Track:** Best Agentic Economy Experience on Arc  
+**Live demo:** https://arc-agent-commerce-psi.vercel.app
 
-**Best Agentic Economy Experience on Arc**
+## What it does
 
-## One-line pitch
+Arc Agent Commerce is a small demo of an AI-powered purchasing flow. A user gives the agent a task and a budget, the app selects a supplier, the user approves a bounded USDC payment, and the backend returns a receipt.
 
-Arc Agent Commerce lets a user delegate a bounded purchase to an AI agent: the agent researches suppliers, requests approval for a fixed USDC budget, executes/simulates settlement on Arc, and returns an auditable receipt.
+The current build runs in simulation mode, so it is safe to try without private keys or real funds. The payment layer is structured so it can be connected to Arc testnet, Circle Wallets, and Gateway later.
 
-## Problem
+## Why this is useful
 
-AI agents are becoming capable of doing real work: buying API calls, compute, datasets, content access, or SaaS subscriptions. But most payment flows are still built for humans clicking checkout buttons. Agents need:
+AI agents are starting to perform real work: buying API calls, compute, data, document review, content access, or SaaS actions. A normal checkout flow is not designed for autonomous agents, and giving an agent full wallet access is unsafe.
 
-- stable pricing,
-- small-value/high-frequency settlement,
-- spending limits,
-- audit trails,
-- user approval controls,
-- and receipts that prove what happened.
+This project focuses on a safer pattern:
 
-## Solution
+- the user sets a clear budget,
+- the agent explains its supplier choice,
+- the user approves before payment,
+- the backend returns an auditable receipt,
+- the settlement rail is denominated in USDC.
 
-This MVP demonstrates an agentic commerce stack:
+## Demo flow
 
-1. User describes a task and budget.
-2. Agent selects a supplier based on task category, price, rating, and USDC support.
-3. User approves a bounded payment intent.
-4. Backend executes or simulates an Arc USDC payment.
-5. App returns a receipt with supplier, amount, chain, transaction hash, and decision reasoning.
+1. Enter a task, for example:
 
-## Circle / Arc products used
+   ```text
+   Find the cheapest inference API to summarize a supplier contract, pay only if under 3 USDC.
+   ```
 
-- **USDC**: stable settlement rail for supplier/API payments.
-- **Arc**: predictable fees and deterministic settlement for commerce UX.
-- **Circle Wallets**: target integration for secure agent/user wallet orchestration.
-- **Circle Gateway**: target integration for treasury and routing across payment flows.
-- **Nanopayments**: target integration for high-frequency, low-value agent actions.
-- **CCTP / Bridge Kit**: optional future extension for cross-chain supplier settlement.
+2. Click **Ask agent for quote**.
+3. Review the selected supplier, price, and reasoning.
+4. Click **Approve & settle**.
+5. Review the receipt with amount, chain, transaction hash, and settlement status.
 
-## Current MVP status
+## Circle / Arc products
 
-- Functional Next.js frontend.
-- API route for agent quote generation.
-- API route for bounded authorization.
-- API route for payment execution/simulated receipt.
-- Solidity contract sketch for bounded agent spending.
-- Demo script for end-to-end flow.
+- **USDC** — stable settlement rail for supplier/API payments.
+- **Arc** — target chain for predictable fees and fast settlement UX.
+- **Circle Wallets** — planned wallet and policy layer for user/agent authorization.
+- **Circle Gateway** — planned treasury and routing layer.
+- **Nanopayments** — planned support for high-frequency, low-value agent actions.
+- **CCTP / Bridge Kit** — future extension for cross-chain supplier settlement.
 
-The app runs in **simulation mode** without real credentials. Add Arc/Circle credentials in `.env` for testnet integration.
+## MVP scope
 
+Included in this repo:
 
-## Live demo
+- Next.js frontend dashboard
+- API route for quote generation
+- API route for bounded authorization
+- API route for simulated payment execution
+- receipt output
+- supplier registry mock data
+- Solidity spend guard contract sketch
+- architecture and submission notes
+- screenshot capture and demo script
 
-Production demo: https://arc-agent-commerce-psi.vercel.app
+Not included yet:
+
+- live Circle Wallets execution
+- real Arc testnet transaction submission
+- persistent database storage
+- production-grade contract audit
+
+See [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md) for more detail.
 
 ## Run locally
 
@@ -65,28 +77,32 @@ npm run dev
 
 Open <http://localhost:3000>.
 
-## Demo script
+## Useful commands
 
 ```bash
+npm run typecheck
+npm run build
 npm run test:demo
+npm run demo:capture
 ```
+
+`npm run demo:capture` creates screenshots in `screenshots/`.
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and fill values when available:
+The app works without environment variables in simulation mode. For future testnet integration, copy the example file:
 
 ```bash
 cp .env.example .env.local
 ```
 
-## Architecture
+Then fill in Arc/Circle credentials locally or in Vercel environment variables. Do not commit secrets.
 
-See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+## Project docs
 
-## Submission draft
-
-See [`docs/SUBMISSION.md`](docs/SUBMISSION.md).
-
-## Circle Product Feedback
-
-See [`docs/CIRCLE_PRODUCT_FEEDBACK.md`](docs/CIRCLE_PRODUCT_FEEDBACK.md).
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- [`docs/SUBMISSION.md`](docs/SUBMISSION.md)
+- [`docs/CIRCLE_PRODUCT_FEEDBACK.md`](docs/CIRCLE_PRODUCT_FEEDBACK.md)
+- [`docs/DEMO.md`](docs/DEMO.md)
+- [`docs/LIMITATIONS.md`](docs/LIMITATIONS.md)
+- [`docs/ROADMAP.md`](docs/ROADMAP.md)
