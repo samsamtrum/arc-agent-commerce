@@ -51,6 +51,11 @@ This MVP demonstrates an agentic commerce stack:
 
 The app runs in **simulation mode** without real credentials. Add Arc/Circle credentials in `.env` for testnet integration.
 
+
+## Live demo
+
+Production demo: https://arc-agent-commerce-psi.vercel.app
+
 ## Run locally
 
 ```bash

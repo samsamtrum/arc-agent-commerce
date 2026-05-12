@@ -53,7 +53,7 @@ TODO: add repo URL after publishing.
 
 ## Demo app URL
 
-TODO: add deployed URL after deployment.
+https://arc-agent-commerce-psi.vercel.app
 
 ## Architecture diagram
 
